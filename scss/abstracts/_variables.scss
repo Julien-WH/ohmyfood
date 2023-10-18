@@ -1,15 +1,27 @@
 // Variables
 
-// Colors
-$primary: #9356DC;
-$secondary: #FF79DA;
-$tertiary: #99E2D0;
+//Colors
+$gloomy-purple: #9356dc;
 $green-font: #008766;
-$blue-light: #89C8FA;
-$blue: #003A68;
+$blue: #89c8fa;
+$blue2: #003a68;
+$pout-pink: #ff79da;
+$green: #99e2d0;
+$grey: #353535;
+$grey2: #eaeaea;
+$white: #fff;
+$black: #000;
+$cascading-white: #f6f6f6;
 
+// Primaries
+$primary: $gloomy-purple !default;
+$secondary: $pout-pink !default;
+$tertiary: $green !default;
+$primary-text-color: $black !default;
+$secondary-text-color: $grey !default;
+$alt-text-color: $white !default;
+$primary-bg: $cascading-white !default;
+$secondary-bg: $white !default;
 //Fonts
-$text-font: 'Roboto', sans-serif;
-$title-font: 'Shrikhand', serif;
-
-//Fonts Size
+$text-font: "Roboto", sans-serif;
+$title-font: "Shrikhand", serif;

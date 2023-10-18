@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+
+.location {
+  height: 50px;
+
+  span {
+    font-weight: 500;
+  }
+}
