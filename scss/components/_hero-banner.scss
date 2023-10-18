@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+.hero-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 27px;
+  padding: 40px 26px;
+  background-color: $secondary-bg;
+  h1 {
+    font-size: toRem(24);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  p {
+    font-size: toRem(18);
+    text-align: center;
+  }
+}

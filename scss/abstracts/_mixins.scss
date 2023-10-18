@@ -1,1 +1,11 @@
-//Box shadow
+//Center with margins
+@mixin margin-center {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+//flex => center vertically and horizontally aligned
+@mixin flex-center {
+}
