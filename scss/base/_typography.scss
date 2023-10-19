@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+.section-title {
+    font-size: toRem(24);
+    font-weight: 700;
+    padding-bottom: 26px;
+}

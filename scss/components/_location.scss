@@ -1,9 +1,7 @@
 @use "../abstracts" as *;
 
 .location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-both;
   gap: toRem(17);
   height: toRem(50);
   background-color: $grey2;

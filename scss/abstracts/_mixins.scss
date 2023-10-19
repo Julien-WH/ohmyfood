@@ -6,6 +6,33 @@
   }
 }
 
-//flex => center vertically and horizontally aligned
-@mixin flex-center {
+//flex => center vertically
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+//flex
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+//flex center vertically and horizontaly
+@mixin flex-center-both {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//column flex both centered
+@mixin flex-column-center-both {
+  @include flex-center-both;
+  flex-direction: column;
+}
+
+//box size
+@mixin box-size($width, $height: $width) {
+  width: $width;
+  height: $height;
 }
