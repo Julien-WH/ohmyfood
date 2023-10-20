@@ -6,6 +6,6 @@
   height: toRem(50);
   background-color: $grey2;
   span {
-    font-weight: 500;
+    font-weight: $bold;
   }
 }

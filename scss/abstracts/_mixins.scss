@@ -36,3 +36,10 @@
   width: $width;
   height: $height;
 }
+
+//text truncate
+@mixin text-shorten {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}

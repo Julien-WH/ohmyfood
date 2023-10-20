@@ -1,0 +1,32 @@
+@use "../abstracts" as *;
+
+.restaurants {
+    padding: 54px 18px 66px 18px;
+    &Card {
+        background-color: $white;
+        position: relative;
+        // height: 251px;
+
+        &_content {
+            padding: 15px 14px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-rows: auto auto;
+            row-gap: toRem(5);
+        }
+    }
+    &Title {
+        font-size: toRem(18);
+        font-weight: $x-bold;
+        @include text-shorten;
+    }
+    &Location {
+        font-size: toRem(17);
+        grid-row-start: 2;
+        @include text-shorten;
+    }
+    &LikeButton {
+        grid-column-start: 2;
+        grid-row: span 2;
+    }
+}

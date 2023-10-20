@@ -2,13 +2,14 @@
 
 .functioning {
     padding: 48px 20px 68px 20px;
+    background-color: $secondary-bg;
 
-    &__cards {
+    &Cards {
         @include flex-column-center-both;
-        font-weight: 500;
+        font-weight: $bold;
         gap: 25px;
     }
-    &__card {
+    &Card {
         @include flex-center-vert;
         gap: 20px;
         padding: 10px 35px;
@@ -17,19 +18,21 @@
         @include box-size(calc(100% - 13px), 72px);
         counter-increment: listCounter;
         position: relative;
+
         &::before {
             content: counter(listCounter);
             display: inline-block;
+            width: toRem(24);
             position: absolute;
             left: -11px;
             border-radius: 50%;
             background-color: $primary;
-            width: toRem(24);
             font-size: toRem(14);
-            color: $alt-text-color;
             line-height: toRem(24);
+            color: $alt-text-color;
             text-align: center;
         }
+
         .fa-solid {
             color: $medium-grey;
             font-size: 18px;

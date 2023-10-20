@@ -75,13 +75,18 @@ th {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   background-color: #f6f6f6;
 }
 
-.section-title {
+.sectionTitle {
   font-size: 1.5rem;
   font-weight: 700;
   padding-bottom: 26px;
@@ -98,6 +103,40 @@ body {
   padding: 14px 14px 13px 14px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background-color: #353535;
+  padding: 25px 22px;
+}
+.footer ul {
+  display: contents;
+}
+.footerTitle {
+  font-family: "Shrikhand", serif;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  margin-bottom: 0.5625rem;
+}
+.footer a {
+  color: #fff;
+  font-weight: 500;
+}
+.footer .fa-solid {
+  font-size: 0.8125rem;
+  padding-right: 0.3125rem;
+}
+.footer li:nth-child(2) i {
+  padding-right: 0.625rem;
+}
+
+.contentGridWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.125rem;
 }
 
 .location {
@@ -118,7 +157,6 @@ body {
   align-items: center;
   gap: 27px;
   padding: 40px 26px;
-  background-color: #fff;
 }
 .hero-banner h1 {
   font-size: 1.5rem;
@@ -141,12 +179,28 @@ body {
 }
 .btn:hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, #9356dc -5.2%, #ff79da 110.74%);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.buttonFavorite {
+  cursor: pointer;
+  border: none;
+  padding: 10px 11px;
+  background-color: #fff;
+}
+.buttonFavorite:active {
+  outline: none;
+  border: none;
+}
+.buttonFavorite:focus {
+  outline-style: none;
 }
 
 .functioning {
   padding: 48px 20px 68px 20px;
+  background-color: #fff;
 }
-.functioning__cards {
+.functioningCards {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +208,7 @@ body {
   font-weight: 500;
   gap: 25px;
 }
-.functioning__card {
+.functioningCard {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -166,25 +220,98 @@ body {
   counter-increment: listCounter;
   position: relative;
 }
-.functioning__card::before {
+.functioningCard::before {
   content: counter(listCounter);
   display: inline-block;
+  width: 1.5rem;
   position: absolute;
   left: -11px;
   border-radius: 50%;
   background-color: #9356dc;
-  width: 1.5rem;
   font-size: 0.875rem;
-  color: #fff;
   line-height: 1.5rem;
+  color: #fff;
   text-align: center;
 }
-.functioning__card .fa-solid {
-  color: #7E7E7E;
+.functioningCard .fa-solid {
+  color: #7e7e7e;
   font-size: 18px;
 }
-.functioning__card .fa-store {
+.functioningCard .fa-store {
   color: #9356dc;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.card:hover {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+.card img {
+  display: block;
+  object-fit: cover;
+  height: 174px;
+  width: 100%;
+}
+.card a::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.new-restaurant {
+  display: block;
+  color: #008766;
+  width: 5rem;
+  height: 1.8125rem;
+  background-color: #99e2d0;
+  border-radius: 2px;
+  position: absolute;
+  right: 12px;
+  top: 13px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.8125rem;
+}
+
+.restaurants {
+  padding: 54px 18px 66px 18px;
+}
+.restaurantsCard {
+  background-color: #fff;
+  position: relative;
+}
+.restaurantsCard_content {
+  padding: 15px 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  row-gap: 0.3125rem;
+}
+.restaurantsTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.restaurantsLocation {
+  font-size: 1.0625rem;
+  grid-row-start: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.restaurantsLikeButton {
+  grid-column-start: 2;
+  grid-row: span 2;
 }
 
 /*# sourceMappingURL=style.css.map */

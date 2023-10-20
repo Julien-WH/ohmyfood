@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+.contentGridWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: toRem(18);
+}

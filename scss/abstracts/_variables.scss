@@ -12,10 +12,11 @@ $grey2: #eaeaea;
 $white: #fff;
 $black: #000;
 $cascading-white: #f6f6f6;
-$medium-grey: #7E7E7E;
+$medium-grey: #7e7e7e;
 
 $button-gradient: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
-$button-gradientHover: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, #9356dc -5.2%, #ff79da 110.74%);
+$button-gradientHover: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%),
+    linear-gradient(201deg, #9356dc -5.2%, #ff79da 110.74%);
 
 // Colors applications
 $primary: $gloomy-purple !default;
@@ -30,3 +31,5 @@ $secondary-bg: $white !default;
 //Fonts
 $text-font: "Roboto", sans-serif;
 $title-font: "Shrikhand", serif;
+$bold: 500;
+$x-bold: 700;
