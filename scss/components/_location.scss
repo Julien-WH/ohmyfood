@@ -2,10 +2,28 @@
 
 .location {
   @include flex-center-both;
-  gap: toRem(17);
   height: toRem(50);
   background-color: $grey2;
-  span {
-    font-weight: $bold;
+  &-SearchForm {
+    @include flex-center-both;
+    gap: toRem(17);
+  }
+
+  input {
+    width: toRem(109);
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: 1rem;
+    color: $grey;
+    font-weight: 500;
+    font-family: $text-font;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .fa-location-dot {
+    color: $grey;
   }
 }

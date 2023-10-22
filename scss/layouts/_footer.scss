@@ -1,25 +1,27 @@
 @use "../abstracts" as *;
 
 .footer {
-    ul {
-        display: contents;
-    }
     display: flex;
     flex-direction: column;
     gap: 7px;
-
     background-color: $grey;
-    padding: 25px 22px;
+    padding: 22px 25px;
 
+    ul {
+        display: contents;
+    }
     &Title {
         font-family: $title-font;
         font-size: toRem(18);
         line-height: toRem(27);
-        margin-bottom: toRem(9);
+        padding-bottom: toRem(9);
     }
     a {
         color: $alt-text-color;
         font-weight: $bold;
+        &:hover {
+            text-decoration: underline;
+        }
     }
     .fa-solid {
         font-size: toRem(13);

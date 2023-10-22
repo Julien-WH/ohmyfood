@@ -99,10 +99,11 @@ body {
 }
 .header img {
   display: block;
-  width: 200px;
-  padding: 14px 14px 13px 14px;
+  height: 30px;
+  padding: 17px;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: content-box;
 }
 
 .footer {
@@ -110,7 +111,7 @@ body {
   flex-direction: column;
   gap: 7px;
   background-color: #353535;
-  padding: 25px 22px;
+  padding: 22px 25px;
 }
 .footer ul {
   display: contents;
@@ -119,11 +120,14 @@ body {
   font-family: "Shrikhand", serif;
   font-size: 1.125rem;
   line-height: 1.6875rem;
-  margin-bottom: 0.5625rem;
+  padding-bottom: 0.5625rem;
 }
 .footer a {
   color: #fff;
   font-weight: 500;
+}
+.footer a:hover {
+  text-decoration: underline;
 }
 .footer .fa-solid {
   font-size: 0.8125rem;
@@ -143,12 +147,30 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.0625rem;
   height: 3.125rem;
   background-color: #eaeaea;
 }
-.location span {
+.location-SearchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.0625rem;
+}
+.location input {
+  width: 6.8125rem;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  font-size: 1rem;
+  color: #353535;
   font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+.location input:focus {
+  outline: none;
+}
+.location .fa-location-dot {
+  color: #353535;
 }
 
 .hero-banner {
@@ -156,7 +178,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 27px;
-  padding: 40px 26px;
+  padding: 45px 20px;
 }
 .hero-banner h1 {
   font-size: 1.5rem;
@@ -176,28 +198,103 @@ body {
   padding: 0.96875rem 1.34625rem;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   text-decoration: none;
+  position: relative;
+  z-index: 1;
 }
-.btn:hover {
+.btn:hover::after {
+  opacity: 1;
+}
+.btn::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 999px;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, #9356dc -5.2%, #ff79da 110.74%);
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+  content: " ";
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms ease-in-out;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
 
 .buttonFavorite {
+  position: relative;
+  font-size: 1.375rem;
+  line-height: 1.375rem;
+  padding: 0.5rem;
   cursor: pointer;
-  border: none;
-  padding: 10px 11px;
-  background-color: #fff;
+  width: 38px;
+  height: 38px;
 }
-.buttonFavorite:active {
-  outline: none;
-  border: none;
+.buttonFavorite input {
+  position: absolute;
+  display: none;
 }
-.buttonFavorite:focus {
-  outline-style: none;
+.buttonFavorite input:checked + .likeButton .fa-heart {
+  opacity: 0;
+  animation: heart-outlines-fade 500ms;
+}
+.buttonFavorite input:checked + .likeButton::after {
+  opacity: 1;
+  animation: heart-filling 500ms ease-in-out;
+}
+.buttonFavorite input:not(:checked) + .likeButton::after {
+  animation: heart-emptying 250ms ease-in-out;
+}
+.buttonFavorite .likeButton::after {
+  content: "\f004";
+  font: var(--fa-font-solid);
+  opacity: 0;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
+  -webkit-font-smoothing: antialiased;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 330ms ease-in-out;
 }
 
+@keyframes heart-filling {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes heart-outlines-fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes heart-emptying {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 .functioning {
-  padding: 48px 20px 68px 20px;
+  padding: 45px 20px;
   background-color: #fff;
 }
 .functioningCards {
@@ -255,15 +352,6 @@ body {
   height: 174px;
   width: 100%;
 }
-.card a::after {
-  content: "";
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
 
 .new-restaurant {
   display: block;
@@ -273,7 +361,7 @@ body {
   background-color: #99e2d0;
   border-radius: 2px;
   position: absolute;
-  right: 12px;
+  right: 13px;
   top: 13px;
   font-size: 0.875rem;
   font-weight: 500;
@@ -282,20 +370,21 @@ body {
 }
 
 .restaurants {
-  padding: 54px 18px 66px 18px;
+  padding: 45px 20px;
 }
 .restaurantsCard {
   background-color: #fff;
   position: relative;
 }
 .restaurantsCard_content {
-  padding: 15px 14px;
+  padding: 7px 6px 15px 14px;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
   row-gap: 0.3125rem;
 }
 .restaurantsTitle {
+  padding-top: 8px;
   font-size: 1.125rem;
   font-weight: 700;
   overflow: hidden;

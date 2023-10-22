@@ -1,14 +1,14 @@
 @use "../abstracts" as *;
 
 .restaurants {
-    padding: 54px 18px 66px 18px;
+    padding: $element-top-bot-padding $element-side-padding;
     &Card {
         background-color: $white;
         position: relative;
         // height: 251px;
 
         &_content {
-            padding: 15px 14px;
+            padding: 7px 6px 15px 14px;
             display: grid;
             grid-template-columns: 1fr auto;
             grid-template-rows: auto auto;
@@ -16,6 +16,7 @@
         }
     }
     &Title {
+        padding-top: 8px;
         font-size: toRem(18);
         font-weight: $x-bold;
         @include text-shorten;

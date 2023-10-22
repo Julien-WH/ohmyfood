@@ -7,8 +7,9 @@
 
   img {
     display: block;
-    width: 200px;
-    padding: 14px 14px 13px 14px;
+    height: 30px;
+    padding: 17px;
     @include margin-center;
+    box-sizing: content-box;
   }
 }
