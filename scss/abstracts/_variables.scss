@@ -1,3 +1,4 @@
+@use "functions" as *;
 // Variables
 
 //Colors
@@ -38,3 +39,5 @@ $x-bold: 700;
 // Paddings
 $element-side-padding: 20px;
 $element-top-bot-padding: 45px;
+
+$desktop-element-maxwith: toRem(1080);

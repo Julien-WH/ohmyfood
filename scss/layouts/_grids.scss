@@ -1,7 +1,16 @@
 @use "../abstracts" as *;
 
-.contentGridWrapper {
+.restaurants__grid-wrapper {
     display: grid;
     grid-template-columns: 1fr;
     gap: toRem(18);
+
+    @include breakpoint(tablet) {
+        grid-template-columns: 1fr 1fr;
+        gap: toRem(50);
+    }
+
+    @include breakpoint(desktop) {
+        column-gap: toRem(100);
+    }
 }

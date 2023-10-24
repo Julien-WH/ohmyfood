@@ -2,14 +2,24 @@
 
 .functioning {
     padding: $element-top-bot-padding $element-side-padding;
-    background-color: $secondary-bg;
-
-    &Cards {
+    @include breakpoint(tablet) {
+        max-width: $desktop-element-maxwith;
+        @include margin-center;
+    }
+    @include breakpoint(desktop) {
+        padding: 50px 0;
+    }
+    &__cards {
         @include flex-column-center-both;
         font-weight: $bold;
         gap: 25px;
+
+        @include breakpoint(tablet) {
+            flex-direction: row;
+            gap: 3.5%;
+        }
     }
-    &Card {
+    &__card {
         @include flex-center-vert;
         gap: 20px;
         padding: 10px 35px;

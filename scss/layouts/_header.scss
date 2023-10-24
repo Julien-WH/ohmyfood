@@ -2,14 +2,23 @@
 // Header
 .header {
   position: relative;
-  z-index: 1;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 
-  img {
-    display: block;
-    height: 30px;
-    padding: 17px;
-    @include margin-center;
-    box-sizing: content-box;
+  &__logo {
+    @include flex-center-horiz;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+
+    img {
+      display: block;
+      height: 30px;
+      padding: 17px;
+      box-sizing: content-box;
+    }
+  }
+
+  &__back-nav {
+    padding: 31px;
+    position: absolute;
   }
 }

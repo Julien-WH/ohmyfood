@@ -39,7 +39,20 @@
 
 //text truncate
 @mixin text-shorten {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//mediaqueries
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media only screen and (min-width: 1280px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
 }

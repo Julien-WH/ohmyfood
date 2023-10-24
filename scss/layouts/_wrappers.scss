@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+.section-wrapper {
+    &__functioning {
+        background-color: $secondary-bg;
+    }
+}
