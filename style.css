@@ -1,3 +1,53 @@
+@keyframes heart-filling {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes heart-outlines-fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes heart-emptying {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in {
+  animation: slide-right 0.5s ease-out forwards;
+}
+
 html,
 body,
 p,
@@ -332,6 +382,13 @@ body {
   transition: opacity 250ms ease-in-out;
 }
 
+.order {
+  margin-inline: auto;
+  margin-bottom: 40px;
+  width: 11.625rem;
+  text-align: center;
+}
+
 .buttonFavorite {
   position: relative;
   font-size: 1.375rem;
@@ -371,42 +428,6 @@ body {
   transition: transform 330ms ease-in-out;
 }
 
-@keyframes heart-filling {
-  0% {
-    transform: scale(0);
-  }
-  70% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-@keyframes heart-outlines-fade {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes heart-emptying {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0);
-  }
-}
 .functioning {
   padding: 45px 20px;
 }
@@ -474,6 +495,7 @@ body {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   transition: box-shadow 250ms ease-in-out;
   overflow: hidden;
+  position: relative;
 }
 .card:hover {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
@@ -482,6 +504,15 @@ body {
   display: block;
   object-fit: cover;
   height: 174px;
+  width: 100%;
+}
+.card a::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
   width: 100%;
 }
 
@@ -502,57 +533,60 @@ body {
 }
 
 .menu-cards {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  grid-template-rows: auto auto;
-  grid-template-areas: "plate plate select" "description price select";
-  gap: 0.3125rem;
-  overflow: hidden;
-}
-.menu-cards li:first-child {
-  font-size: 1.125rem;
-  grid-area: plate;
-  padding-top: 15px;
-  padding-left: 15px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-weight: 500;
-}
-.menu-cards li {
   font-size: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-.menu-cards li:nth-child(2) {
-  grid-area: description;
-  padding-left: 15px;
-  padding-bottom: 15px;
+.menu-cards .card {
+  background-color: #fff;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px 0 15px 15px;
+}
+.menu-cards .card:hover .menu-cards--selected {
+  margin-right: 0;
+}
+.menu-cards .card:hover .menu-cards--selected svg {
+  transform: rotate(-360deg);
+}
+.menu-cards__content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.menu-cards a {
+  font-size: 1.125rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  display: block;
+  padding-bottom: 0.3125rem;
+}
+.menu-cards p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.menu-cards li:nth-child(3) {
+.menu-cards span {
   font-weight: 500;
-  grid-area: price;
   padding-right: 15px;
+  flex-shrink: 0;
 }
-.menu-cards::after {
-  content: "";
-  background-image: url(/assets/images/icons/check.svg);
+.menu-cards--selected {
+  width: 3.75rem;
   background-color: #99e2d0;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 4.6875rem;
-  width: 0;
-  grid-area: select;
-  display: block;
-  transition: width 250ms ease-out;
+  align-self: stretch;
+  flex-shrink: 0;
+  margin: -15px -3.75rem -15px 0px;
+  display: grid;
+  place-content: center;
+  transition: 250ms ease-out;
 }
-.menu-cards:hover::after {
-  transform: rotate(360deg);
-  width: 3.6875rem;
+.menu-cards--selected svg {
+  transform: rotate(-180deg);
+  transition: 250ms ease-out;
 }
-
 .restaurants {
   padding: 45px 20px;
 }
