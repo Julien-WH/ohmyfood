@@ -82,8 +82,8 @@
     top: toRem(8);
     left: toRem(8);
     background: $button-gradient;
+    background-clip: text;
     -webkit-font-smoothing: antialiased;
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: transform 330ms ease-in-out;
   }
