@@ -1,0 +1,49 @@
+@use "../abstracts" as *;
+
+.restaurants-page {
+    background-color: $secondary-bg;
+
+    img {
+        display: block;
+        max-height: 390px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.restaurants-menu {
+    border: 40px 0;
+    background-color: $cascading-white;
+    padding: 32px 13px 0px 18px;
+    border-radius: 32px 32px 0 0;
+    margin-top: -32px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &__header {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+
+        h1 {
+            font-family: $title-font;
+            font-size: toRem(28);
+        }
+    }
+
+    &__dishes {
+        h2 {
+            text-transform: uppercase;
+            font-weight: $normal;
+            padding-bottom: toRem(9);
+        }
+        hr {
+            width: toRem(40);
+            border: solid $green;
+            border-width: 3px 0 0 0;
+            padding-bottom: toRem(12);
+        }
+    }
+}

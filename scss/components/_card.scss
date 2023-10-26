@@ -15,15 +15,15 @@
         height: 174px;
         width: 100%;
     }
-    a::after {
-        content: "";
-        z-index: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-    }
+    // a::after {
+    //     content: "";
+    //     z-index: 1;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     width: 100%;
+    // }
 }
 
 .new-restaurant {
@@ -39,4 +39,63 @@
     font-weight: $bold;
     text-align: center;
     line-height: toRem(29);
+}
+
+.menu-cards {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "plate plate select"
+        "description price select";
+    gap: toRem(5);
+    overflow: hidden;
+
+    //plate name
+    li:first-child {
+        font-size: toRem(18);
+        grid-area: plate;
+        padding-top: 15px;
+        padding-left: 15px;
+        @include text-shorten;
+        font-weight: $bold;
+    }
+
+    li {
+        font-size: toRem(15);
+    }
+
+    //plate description
+    li:nth-child(2) {
+        grid-area: description;
+        padding-left: 15px;
+        padding-bottom: 15px;
+        @include text-shorten;
+    }
+
+    //price
+    li:nth-child(3) {
+        font-weight: $bold;
+        grid-area: price;
+        padding-right: 15px;
+    }
+
+    &::after {
+        content: "";
+        background-image: url(/assets/images/icons/check.svg);
+        background-color: $green;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: toRem(75);
+        width: 0;
+        grid-area: select;
+        display: block;
+        transition: width 250ms ease-out;
+    }
+
+    &:hover::after {
+        transform: rotate(360deg);
+        width: toRem(59);
+    }
 }
