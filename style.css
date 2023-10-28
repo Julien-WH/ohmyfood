@@ -12,16 +12,10 @@
   }
 }
 @keyframes heart-outlines-fade {
-  0% {
+  0%, 50% {
     opacity: 1;
   }
-  50% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0;
-  }
-  100% {
+  70%, 100% {
     opacity: 0;
   }
 }
@@ -34,20 +28,19 @@
     transform: scale(0);
   }
 }
-@keyframes slide-right {
+@keyframes card-in {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
     opacity: 0;
   }
+  90% {
+    transform: translateY(10%);
+  }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
-.slide-in {
-  animation: slide-right 0.5s ease-out forwards;
-}
-
 html,
 body,
 p,
@@ -136,6 +129,16 @@ body {
   background-color: #f6f6f6;
 }
 
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
 .sectionTitle {
   font-size: 1.5rem;
   font-weight: 700;
@@ -198,6 +201,12 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     height: 7.125rem;
+    gap: 9px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .footer {
+    gap: 40px;
   }
 }
 .footer ul {
@@ -277,10 +286,23 @@ body {
   flex-direction: column;
   gap: 40px;
 }
+@media only screen and (min-width: 768px) {
+  .restaurants-menu {
+    max-width: 1080px;
+    margin-inline: auto;
+  }
+}
 .restaurants-menu__header {
   display: flex;
-  gap: 24px;
+  justify-content: space-between;
   align-items: center;
+  padding-right: 24px;
+  gap: 24px;
+}
+@media only screen and (min-width: 768px) {
+  .restaurants-menu__header {
+    justify-content: center;
+  }
 }
 .restaurants-menu__header h1 {
   font-family: "Shrikhand", serif;
@@ -393,39 +415,30 @@ body {
   position: relative;
   font-size: 1.375rem;
   line-height: 1.375rem;
+  line-height: 1.375rem;
   padding: 0.5rem;
   cursor: pointer;
-  width: 38px;
-  height: 38px;
   z-index: 1;
-}
-.buttonFavorite input {
-  position: absolute;
-  display: none;
-}
-.buttonFavorite input:checked + .likeButton .fa-heart {
-  opacity: 0;
-  animation: heart-outlines-fade 500ms;
-}
-.buttonFavorite input:checked + .likeButton::after {
-  opacity: 1;
-  animation: heart-filling 500ms ease-in-out;
-}
-.buttonFavorite input:not(:checked) + .likeButton::after {
-  animation: heart-emptying 250ms ease-in-out;
 }
 .buttonFavorite .likeButton::after {
   content: "\f004";
   font: var(--fa-font-solid);
-  opacity: 0;
   position: absolute;
+  background: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
   top: 0.5rem;
   left: 0.5rem;
-  background: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
   -webkit-font-smoothing: antialiased;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: transform 330ms ease-in-out;
+}
+.buttonFavorite input + .likeButton::after {
+  animation: heart-emptying 300ms ease-in-out forwards;
+}
+.buttonFavorite input:checked + .likeButton .fa-heart {
+  animation: heart-outlines-fade 700ms forwards;
+}
+.buttonFavorite input:checked + .likeButton::after {
+  animation: heart-filling 700ms ease-in-out forwards;
 }
 
 .functioning {
@@ -433,7 +446,7 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .functioning {
-    max-width: 67.5rem;
+    max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -587,12 +600,52 @@ body {
   transform: rotate(-180deg);
   transition: 250ms ease-out;
 }
+.menu-cards .animate-in {
+  animation: card-in 300ms ease-in-out both;
+}
+.menu-cards.entrances .animate-in:nth-child(2) {
+  animation-delay: 100ms;
+}
+.menu-cards.entrances .animate-in:nth-child(3) {
+  animation-delay: 200ms;
+}
+.menu-cards.entrances .animate-in:nth-child(4) {
+  animation-delay: 300ms;
+}
+.menu-cards.entrances .animate-in:nth-child(5) {
+  animation-delay: 400ms;
+}
+.menu-cards.main-dishes .animate-in:nth-child(1) {
+  animation-delay: 300ms;
+}
+.menu-cards.main-dishes .animate-in:nth-child(2) {
+  animation-delay: 400ms;
+}
+.menu-cards.main-dishes .animate-in:nth-child(3) {
+  animation-delay: 500ms;
+}
+.menu-cards.main-dishes .animate-in:nth-child(4) {
+  animation-delay: 600ms;
+}
+.menu-cards.deserts .animate-in:nth-child(1) {
+  animation-delay: 600ms;
+}
+.menu-cards.deserts .animate-in:nth-child(2) {
+  animation-delay: 700ms;
+}
+.menu-cards.deserts .animate-in:nth-child(3) {
+  animation-delay: 800ms;
+}
+.menu-cards.deserts .animate-in:nth-child(4) {
+  animation-delay: 900ms;
+}
+
 .restaurants {
   padding: 45px 20px;
 }
 @media only screen and (min-width: 768px) {
   .restaurants {
-    max-width: 67.5rem;
+    max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
   }

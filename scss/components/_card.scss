@@ -103,18 +103,18 @@
         }
     }
 
-    // &::after {
-    //     content: "";
-    //     background-image: url(/assets/images/icons/check.svg);
-    //     background-color: $green;
-    //     background-repeat: no-repeat;
-    //     background-position: center;
-    //     height: toRem(75);
-    //     width: toRem(59);
-    //     display: block;
-    //     transition: width 250ms ease-out;
-    // }
+    .animate-in {
+        animation: card-in 300ms ease-in-out both;
+    }
+    &.entrances .animate-in {
+        @include cascade-delay-group(4, 1, 100ms);
+    }
 
-    &:hover::after {
+    &.main-dishes .animate-in {
+        @include cascade-delay-group(3, 4, 100ms);
+    }
+
+    &.deserts .animate-in {
+        @include cascade-delay-group(3, 7, 100ms);
     }
 }

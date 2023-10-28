@@ -18,7 +18,7 @@
     />
     <link rel="stylesheet" href="style.css" />
 
-    <title>OhMyFood !</title>
+    <title>OhMyFood</title>
   </head>
   <body>
     <header class="header">
@@ -87,11 +87,10 @@
               <p class="restaurantsLocation">Ménilmontant</p>
 
               <label class="restaurantsLikeButton buttonFavorite">
-                <input type="checkbox" value="1" />
-                <span class="likeButton">
-                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                  <span class="sr-only">Ajouter aux favoris</span>
-                </span>
+                <input type="checkbox" class="hidden" aria-label="Favori" />
+                <span class="likeButton"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </label>
             </div>
           </article>
@@ -103,17 +102,23 @@
             />
             <div class="restaurants__card__content">
               <h3 class="restaurantsTitle">
-                <a href="#">La note enchantée</a>
+                <a href="restaurant/la-note-enchantee.html"
+                  >La note enchantée</a
+                >
                 <span class="new-restaurant">Nouveau</span>
               </h3>
               <p class="restaurantsLocation">Charonne</p>
 
-              <label class="restaurantsLikeButton buttonFavorite">
-                <input type="checkbox" value="1" checked />
-                <span class="likeButton">
-                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                  <span class="sr-only">Ajouter aux favoris</span>
-                </span>
+              <label class="buttonFavorite">
+                <input
+                  type="checkbox"
+                  class="hidden"
+                  aria-label="Favori"
+                  checked
+                />
+                <span class="likeButton"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </label>
             </div>
           </article>
@@ -125,16 +130,15 @@
             />
             <div class="restaurants__card__content">
               <h3 class="restaurantsTitle">
-                <a href="#">À la française</a>
+                <a href="restaurant/a-la-francaise.html">À la française</a>
               </h3>
               <p class="restaurantsLocation">Cité Rouge</p>
 
-              <label class="restaurantsLikeButton buttonFavorite">
-                <input type="checkbox" value="1" />
-                <span class="likeButton">
-                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                  <span class="sr-only">Ajouter aux favoris</span>
-                </span>
+              <label class="buttonFavorite">
+                <input type="checkbox" class="hidden" aria-label="Favori" />
+                <span class="likeButton"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </label>
             </div>
           </article>
@@ -146,16 +150,17 @@
             />
             <div class="restaurants__card__content">
               <h3 class="restaurantsTitle">
-                <a href="#">Le délice des sens</a>
+                <a href="restaurant/le-delice-des-sens.html"
+                  >Le délice des sens</a
+                >
               </h3>
               <p class="restaurantsLocation">Folie-Méricourt</p>
 
-              <label class="restaurantsLikeButton buttonFavorite">
-                <input type="checkbox" value="1" />
-                <span class="likeButton">
-                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                  <span class="sr-only">Ajouter aux favoris</span>
-                </span>
+              <label class="buttonFavorite">
+                <input type="checkbox" class="hidden" aria-label="Favori" />
+                <span class="likeButton"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </label>
             </div>
           </article>

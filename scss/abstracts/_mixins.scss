@@ -56,3 +56,33 @@
     }
   }
 }
+
+//animation delay
+//$nb : number of child to repeat the delay on
+//$delay : delay to add to each loop
+@mixin cascade-delay($nb, $delay) {
+  @for $i from 1 through ($nb) {
+    &:nth-child(#{$i}) {
+      animation-delay: (#{$i * $delay});
+    }
+  }
+}
+
+@mixin cascade-delay-group($nb, $start, $delay) {
+  @for $i from $start through ($start + $nb) {
+    @if $i != 1 {
+      &:nth-child(#{$i - $start + 1}) {
+        animation-delay: (#{($i) * $delay - $delay});
+      }
+    }
+  }
+}
+
+// @mixin cascade-delay-group($duration) {
+//   //12 because we got maximum 12 elements to animate on the page
+//   @for $i from 1 through 12 {
+//     &:nth-of-type(#{$i}) {
+//       animation-delay: (#{($i - 1) * $duration});
+//     }
+//   }
+// }
