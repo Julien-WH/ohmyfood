@@ -696,7 +696,7 @@ body {
   position: absolute;
   display: block;
   inset: 0;
-  animation: hide-loader 5s forwards;
+  animation: hide-loader 2s forwards;
   height: 100vh;
   width: 100%;
   z-index: 100;
@@ -727,34 +727,34 @@ body {
   position: absolute;
   bottom: 13px;
   z-index: -1;
-  animation: 3s 1500ms lineGrow cubic-bezier(0.13, 0.58, 0.99, 0.63) forwards;
+  animation: 900ms 900ms lineGrow cubic-bezier(0.13, 0.58, 0.99, 0.63) forwards;
 }
 .loader .loader-letters div {
   transform: rotateY(90deg);
 }
 .loader .loader-letters div:nth-child(1) {
-  animation: rotate-in 700ms 100ms ease-in-out forwards, color-change 5s 100ms ease-in infinite forwards;
+  animation: rotate-in 250ms 100ms ease-in-out forwards, color-change 3s 100ms ease-in infinite forwards;
 }
 .loader .loader-letters div:nth-child(2) {
-  animation: rotate-in 700ms 200ms ease-in-out forwards, color-change 5s 200ms ease-in infinite forwards;
+  animation: rotate-in 250ms 200ms ease-in-out forwards, color-change 3s 200ms ease-in infinite forwards;
 }
 .loader .loader-letters div:nth-child(3) {
-  animation: rotate-in 700ms 300ms ease-in-out forwards, color-change 5s 300ms ease-in infinite forwards;
+  animation: rotate-in 250ms 300ms ease-in-out forwards, color-change 3s 300ms ease-in infinite forwards;
 }
 .loader .loader-letters div:nth-child(4) {
-  animation: rotate-in 700ms 400ms ease-in-out forwards, color-change 5s 400ms ease-in infinite forwards;
+  animation: rotate-in 250ms 400ms ease-in-out forwards, color-change 3s 400ms ease-in infinite forwards;
 }
 .loader .loader-letters div:nth-child(5) {
-  animation: rotate-in 700ms 500ms ease-in-out forwards, color-change 5s 500ms ease-in infinite forwards;
+  animation: rotate-in 250ms 500ms ease-in-out forwards, color-change 3s 500ms ease-in infinite forwards;
 }
 .loader .loader-letters div:nth-child(6) {
-  animation: rotate-in 700ms 600ms ease-in-out forwards, color-change 5s 600ms ease-in infinite forwards;
+  animation: rotate-in 250ms 600ms ease-in-out forwards, color-change 3s 600ms ease-in infinite forwards;
 }
 .loader .loader-letters div:nth-child(7) {
-  animation: rotate-in 700ms 700ms ease-in-out forwards, color-change 5s 700ms ease-in infinite forwards;
+  animation: rotate-in 250ms 700ms ease-in-out forwards, color-change 3s 700ms ease-in infinite forwards;
 }
 .loader .loader-letters div:nth-child(8) {
-  animation: rotate-in 700ms 800ms ease-in-out forwards, color-change 5s 800ms ease-in infinite forwards;
+  animation: rotate-in 250ms 800ms ease-in-out forwards, color-change 3s 800ms ease-in infinite forwards;
 }
 
 @keyframes rotate-in {

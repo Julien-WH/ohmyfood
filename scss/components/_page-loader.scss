@@ -5,7 +5,7 @@
     position: absolute;
     display: block;
     inset: 0;
-    animation: hide-loader 5s forwards;
+    animation: hide-loader 2s forwards;
     height: 100vh;
     width: 100%;
     z-index: 100;
@@ -35,7 +35,7 @@
             position: absolute;
             bottom: 13px;
             z-index: -1;
-            animation: 3s 1500ms lineGrow cubic-bezier(0.13, 0.58, 0.99, 0.63) forwards;
+            animation: 900ms 900ms lineGrow cubic-bezier(0.13, 0.58, 0.99, 0.63) forwards;
         }
 
         div {
@@ -44,8 +44,8 @@
             @for $i from 1 through 8 {
                 &:nth-child(#{$i}) {
                     animation:
-                        rotate-in 700ms (#{$i * 100ms}) ease-in-out forwards,
-                        color-change 5s (#{$i * 100ms}) ease-in infinite forwards;
+                        rotate-in 250ms (#{$i * 100ms}) ease-in-out forwards,
+                        color-change 3s (#{$i * 100ms}) ease-in infinite forwards;
                 }
             }
         }
