@@ -40,7 +40,7 @@
 
         div {
             transform: rotateY(90deg);
-
+            color: $pout-pink;
             @for $i from 1 through 8 {
                 &:nth-child(#{$i}) {
                     animation:

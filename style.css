@@ -731,6 +731,7 @@ body {
 }
 .loader .loader-letters div {
   transform: rotateY(90deg);
+  color: #ff79da;
 }
 .loader .loader-letters div:nth-child(1) {
   animation: rotate-in 250ms 100ms ease-in-out forwards, color-change 3s 100ms ease-in infinite forwards;
