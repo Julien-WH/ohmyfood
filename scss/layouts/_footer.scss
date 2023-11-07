@@ -16,7 +16,7 @@
         // line-height: toRem(18);
     }
     @include breakpoint(desktop) {
-        gap: 40px;
+        gap: 10px;
     }
 
     ul {
@@ -40,9 +40,6 @@
     a {
         color: $alt-text-color;
         font-weight: $bold;
-        &:hover {
-            text-decoration: underline;
-        }
     }
     .fa-solid {
         font-size: toRem(13);
@@ -50,5 +47,9 @@
     }
     li:nth-child(2) i {
         padding-right: toRem(10);
+    }
+
+    li:nth-child(3) {
+        padding-right: toRem(45);
     }
 }

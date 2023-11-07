@@ -206,7 +206,7 @@ body {
 }
 @media only screen and (min-width: 1280px) {
   .footer {
-    gap: 40px;
+    gap: 10px;
   }
 }
 .footer ul {
@@ -233,15 +233,15 @@ body {
   color: #fff;
   font-weight: 500;
 }
-.footer a:hover {
-  text-decoration: underline;
-}
 .footer .fa-solid {
   font-size: 0.8125rem;
   padding-right: 0.3125rem;
 }
 .footer li:nth-child(2) i {
   padding-right: 0.625rem;
+}
+.footer li:nth-child(3) {
+  padding-right: 2.8125rem;
 }
 
 .restaurants__grid-wrapper {
